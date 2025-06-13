@@ -30,6 +30,10 @@ func CheckURL(url string) CheckResult {
 	}
 	defer resp.Body.Close()
 
-	return CheckResult{}
+	return CheckResult{
+		Target: url,
+		Status: resp.Status,
+		Err:    nil,
+	}
 
 }
